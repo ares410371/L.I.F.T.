@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<data>
+		<variable
+			name="exercise" type="com.ivet.lift.repository.data.Exercise" />
+		<variable
+			name="view" type="com.ivet.lift.ui.view.ExerciseListView" />
+		<variable
+			name="selected" type="java.lang.Boolean" />
+	</data>
+
+	<android.support.constraint.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:clickable="true"
+		android:onClick="@{() -> view.onItemClick(exercise)}"
+		android:onLongClick="@{() -> view.onItemLongClick(exercise)}"
+		app:backgroundColor="@{selected}"
+		android:focusable="true">
+
+		<ImageView
+			android:id="@+id/iv_exercise_icon"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/global_spacing_8dp"
+			app:imageResource="@{exercise.iconId}"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			tools:src="@tools:sample/avatars" />
+
+		<TextView
+			android:id="@+id/tv_exercise_name"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:padding="@dimen/global_spacing_8dp"
+			android:text="@{exercise.name}"
+			tools:text="@tools:sample/full_names"
+			app:layout_constraintTop_toTopOf="@id/iv_exercise_icon"
+			app:layout_constraintBottom_toBottomOf="@id/iv_exercise_icon"
+			app:layout_constraintLeft_toRightOf="@+id/iv_exercise_icon" />
+
+	</android.support.constraint.ConstraintLayout>
+
+</layout>
