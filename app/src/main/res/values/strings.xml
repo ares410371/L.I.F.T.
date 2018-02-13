@@ -1,0 +1,72 @@
+<resources>
+	<string name="app_name">L.I.F.T.</string>
+
+	<string name="back_squats">Back squats</string>
+	<string name="front_squats">Front squats</string>
+	<string name="overhead_squats">Overhead squats</string>
+	<string name="lunges">Lunges</string>
+	<string name="box_squats">Box squats</string>
+	<string name="back_squat_jumps">Back squat jumps</string>
+	<string name="good_morning">Good morning</string>
+	<string name="seated_good_morning">Seated good morning</string>
+
+	<string name="conventional_deadlift">Conventional deadlift</string>
+	<string name="sumo_deadlift">Sumo deadlift</string>
+	<string name="block_pull">Block pull</string>
+	<string name="deficit_deadlift">Deficit deadlift</string>
+	<string name="snatch_grip_deficit_deadlift">Snatch grip deficit deadlift</string>
+	<string name="cleans">Cleans</string>
+	<string name="high_pulls">High pulls</string>
+	<string name="romaniam_deadlift">Romanian deadlift</string>
+	<string name="stiff_legged_deadlift">Stiff legged deadlift</string>
+
+	<string name="bench_press">Bench press</string>
+	<string name="incline_barbell_bench_press">Incline barbell bench press</string>
+	<string name="decline_barbell_bench_press">Decline barbell bench press</string>
+	<string name="dumbell_bench_press">Dumbell bench press</string>
+	<string name="incline_dumbbell_bench_press">Incline dumbbell bench press</string>
+	<string name="decline_dumbbel_bench_press">Decline dumbbel bench press</string>
+	<string name="block_press">Block press</string>
+	<string name="bench_press_with_chains">Bench press with chains/bands</string>
+	<string name="floor_press">Floor press</string>
+	<string name="close_grip_bench_press">Close grip bench press</string>
+	<string name="reverse_grip_bench_press">Reverse grip bench press</string>
+	<string name="dips">Dips</string>
+	<string name="dumbbell_flies">Dumbbell flies</string>
+
+	<string name="military_press">Military press</string>
+	<string name="dumbbell_overhead_press">Dumbbell overhead press</string>
+	<string name="push_press">Push press</string>
+	<string name="jerk">Jerk</string>
+	<string name="snatch_grip_press">Snatch grip press</string>
+	<string name="seated_snatch_grip_press">Sots press</string>
+	<string name="snatch">Snatch</string>
+	<string name="clean_and_jerk">Clean and jerk</string>
+
+	<string name="pull_ups">Pull ups</string>
+	<string name="chin_ups">Chin ups</string>
+	<string name="wide_grip_pull_ups">Wide grip pull ups</string>
+	<string name="muscle_ups">Muscle ups</string>
+
+	<string name="kettlebell_swing">Kettlebell swing</string>
+	<string name="kettlebell_turkish_get_up">Kettlebell Turkish get up</string>
+	<string name="kettlebell_snatch">Kettlebell snatch</string>
+	<string name="kettlebell_clean">Kettlebell clean</string>
+	<string name="kettlebell_press">Kettlebell press</string>
+	<string name="kettlebell_jerk">Kettlebell jerk</string>
+	<string name="kettlebell_arm_bar">Kettlebell armbar</string>
+	<string name="kettlebell_one_arm_swing">Kettlebell one arm swing</string>
+	<string name="kettlebell_bentpress">Kettlebell bentpress</string>
+
+	<string name="name">name</string>
+	<string name="add">add</string>
+	<string name="title_exercises">Exercises</string>
+	<string name="search_hint">Search</string>
+
+	<string name="delete">Delete</string>
+	<string name="copy">Copy</string>
+	<string name="forward">Forward</string>
+	<string name="selected">selected</string>
+
+
+</resources>

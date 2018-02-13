@@ -1,33 +1,37 @@
-package com.ivet.lift.di.module
+package com.pwl.lift.di.module
 
 import android.arch.persistence.db.SupportSQLiteDatabase
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
-import com.ivet.lift.di.scope.AppScope
-import com.ivet.lift.repository.TrainingDatabase
-import com.ivet.lift.repository.dao.ExerciseDao
-import com.ivet.lift.repository.dao.TrainingDayDao
-import com.ivet.lift.repository.dao.WeightAndRepsDao
-import com.ivet.lift.repository.initExercises
+import com.pwl.lift.common.Background
+import com.pwl.lift.db.TrainingDatabase
+import com.pwl.lift.db.dao.ExerciseDao
+import com.pwl.lift.db.dao.TrainingDayDao
+import com.pwl.lift.db.dao.WeightAndRepsDao
+import com.pwl.lift.di.anotation.scope.AppScope
+import com.pwl.lift.common.initExercises
 import dagger.Module
 import dagger.Provides
+import kotlinx.coroutines.experimental.launch
 
 /**
  * Created by ivet on 23/01/2018.
  */
 
 @Module
-class DatabaseModule(val context: Context) {
+class DatabaseModule(val appContext: Context) {
 
 	@Provides
 	@AppScope
 	fun provideTrainingDatabase(): TrainingDatabase {
-		val trainingDatabase: TrainingDatabase = Room.databaseBuilder(context.applicationContext, TrainingDatabase::class.java, "TrainingDatabase.db")
+		val trainingDatabase: TrainingDatabase = Room.databaseBuilder(appContext.applicationContext, TrainingDatabase::class.java, "TrainingDatabase.db")
 			.addCallback(object : RoomDatabase.Callback() {
 				override fun onCreate(db: SupportSQLiteDatabase) {
 					super.onCreate(db)
-					initExercises(context, provideTrainingDatabase().exerciseDao()).subscribe()
+					launch(Background) {
+						initExercises(appContext, provideTrainingDatabase().exerciseDao())
+					}
 				}
 			}).build()
 

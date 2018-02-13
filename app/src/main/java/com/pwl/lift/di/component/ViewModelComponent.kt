@@ -1,10 +1,10 @@
-package com.ivet.lift.di.component
+package com.pwl.lift.di.component
 
 import android.arch.lifecycle.ViewModel
-import com.ivet.lift.di.module.ViewModelModule
-import com.ivet.lift.di.scope.ActivityScope
-import com.ivet.lift.ui.activity.ExerciseListActivity
-import com.ivet.lift.ui.viewModel.factory.ViewModelFactory
+import com.pwl.lift.di.anotation.scope.ActivityScope
+import com.pwl.lift.di.module.ViewModelModule
+import com.pwl.lift.factory.ViewModelFactory
+import com.pwl.lift.ui.exerciseList.ExerciseListActivity
 import dagger.Component
 import javax.inject.Provider
 

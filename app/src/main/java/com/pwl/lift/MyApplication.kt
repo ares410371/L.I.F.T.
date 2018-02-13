@@ -1,12 +1,9 @@
-package com.ivet.lift
+package com.pwl.lift
 
 import android.app.Application
-import com.ivet.lift.di.component.ApplicationComponent
-import com.ivet.lift.di.component.DaggerApplicationComponent
-import com.ivet.lift.di.module.ApplicationModule
-import com.ivet.lift.di.module.DatabaseModule
-import com.ivet.lift.ui.viewModel.factory.ViewModelFactory
-import javax.inject.Inject
+import com.pwl.lift.di.component.ApplicationComponent
+import com.pwl.lift.di.component.DaggerApplicationComponent
+import com.pwl.lift.di.module.DatabaseModule
 
 /**
  * Created by ivet on 23/01/2018.
@@ -14,7 +11,6 @@ import javax.inject.Inject
 class MyApplication : Application() {
 
 	lateinit var applicationComponent: ApplicationComponent
-
 
 	override fun onCreate() {
 		super.onCreate()
@@ -24,7 +20,7 @@ class MyApplication : Application() {
 
 	private fun initApplicationComponent() {
 		applicationComponent = DaggerApplicationComponent.builder()
-		.databaseModule(DatabaseModule(this))
+			.databaseModule(DatabaseModule(this))
 			.build()
 	}
 }

@@ -1,4 +1,4 @@
-package com.ivet.lift.repository.data
+package com.pwl.lift.db.entity
 
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey

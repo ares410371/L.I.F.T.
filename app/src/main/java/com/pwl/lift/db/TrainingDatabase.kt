@@ -1,14 +1,14 @@
-package com.ivet.lift.repository
+package com.pwl.lift.db
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
 import android.arch.persistence.room.TypeConverters
-import com.ivet.lift.repository.dao.ExerciseDao
-import com.ivet.lift.repository.dao.TrainingDayDao
-import com.ivet.lift.repository.dao.WeightAndRepsDao
-import com.ivet.lift.repository.data.Exercise
-import com.ivet.lift.repository.data.TrainingDay
-import com.ivet.lift.repository.data.WeightAndReps
+import com.pwl.lift.db.dao.ExerciseDao
+import com.pwl.lift.db.dao.TrainingDayDao
+import com.pwl.lift.db.dao.WeightAndRepsDao
+import com.pwl.lift.db.entity.Exercise
+import com.pwl.lift.db.entity.TrainingDay
+import com.pwl.lift.db.entity.WeightAndReps
 
 /**
  * Created by ivet on 23/01/2018.

@@ -1,4 +1,4 @@
-package com.ivet.lift.repository
+package com.pwl.lift.db
 
 import android.arch.persistence.room.TypeConverter
 import java.util.Date

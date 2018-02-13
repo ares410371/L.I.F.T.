@@ -1,4 +1,4 @@
-package com.strv.ktools
+package com.pwl.lift.common
 
 import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.LiveData
@@ -15,13 +15,13 @@ import me.tatarka.bindingcollectionadapter2.collections.DiffObservableList
 
 // TODO: Temp fix for tatarka - remove when tatarka adds support for lifecycle
 
-class DiffObservableListLiveData<T>(liveData: LiveData<Resource<List<T>>>, callback: DiffObservableList.Callback<T>) : MediatorLiveData<Resource<List<T>>>() {
+class DiffObservableListLiveData<T>(liveData: LiveData<List<T>>, callback: DiffObservableList.Callback<T>) : MediatorLiveData<List<T>>() {
 	val diffList = DiffObservableList<T>(callback)
 
 	init {
 		addSource(liveData, {
 			value = it
-			it?.data?.let { diffList.update(it) }
+			it?.let { diffList.update(it) }
 		})
 	}
 }
@@ -45,3 +45,4 @@ class LifecycleAwareBindingRecyclerViewAdapter<T>(private val lifecycleOwner: Li
 		return super.onCreateBinding(inflater, layoutId, viewGroup).apply { setLifecycleOwner(lifecycleOwner) }
 	}
 }
+

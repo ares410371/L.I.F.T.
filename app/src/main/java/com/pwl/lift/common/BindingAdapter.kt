@@ -1,4 +1,4 @@
-package com.ivet.lift.ui
+package com.pwl.lift.common
 
 import android.databinding.BindingAdapter
 import android.graphics.Color
@@ -18,3 +18,7 @@ fun setBackgroundColor(layout: ConstraintLayout, selected: Boolean) {
 		layout.setBackgroundColor(Color.TRANSPARENT)
 	}
 }
+
+
+
+

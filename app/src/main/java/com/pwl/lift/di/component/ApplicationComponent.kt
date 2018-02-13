@@ -1,9 +1,9 @@
-package com.ivet.lift.di.component
+package com.pwl.lift.di.component
 
-import com.ivet.lift.di.module.ApplicationModule
-import com.ivet.lift.di.module.DatabaseModule
-import com.ivet.lift.di.scope.AppScope
-import com.ivet.lift.repository.dao.ExerciseDao
+import com.pwl.lift.db.dao.ExerciseDao
+import com.pwl.lift.di.anotation.scope.AppScope
+import com.pwl.lift.di.module.ApplicationModule
+import com.pwl.lift.di.module.DatabaseModule
 import dagger.Component
 
 /**

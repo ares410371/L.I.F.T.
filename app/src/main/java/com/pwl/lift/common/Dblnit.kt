@@ -1,14 +1,11 @@
-package com.ivet.lift.repository
+package com.pwl.lift.common
 
 import android.content.Context
-import com.ivet.lift.R
-import com.ivet.lift.repository.dao.ExerciseDao
-import com.ivet.lift.repository.data.Exercise
-import io.reactivex.Observable
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
+import com.pwl.lift.R
+import com.pwl.lift.db.dao.ExerciseDao
+import com.pwl.lift.db.entity.Exercise
 
-fun initExercises(context: Context, exerciseDao: ExerciseDao): Observable<Unit> {
+fun initExercises(context: Context, exerciseDao: ExerciseDao) {
 
 	val backSquat = Exercise(0, context.getResources().getString(R.string.back_squats), R.mipmap.ic_squat, null)
 	val frontSquats = Exercise(0, context.getResources().getString(R.string.front_squats), R.mipmap.ic_squat, null)
@@ -61,58 +58,57 @@ fun initExercises(context: Context, exerciseDao: ExerciseDao): Observable<Unit> 
 	val kettlebellOneArmSwing = Exercise(0, context.getResources().getString(R.string.kettlebell_one_arm_swing), R.mipmap.ic_kettlebelt, null)
 	val kettlebellBentpress = Exercise(0, context.getResources().getString(R.string.kettlebell_bentpress), R.mipmap.ic_kettlebelt, null)
 
-	return Observable.fromCallable {
-		exerciseDao.insertExercise(backSquat)
-		exerciseDao.insertExercise(frontSquats)
-		exerciseDao.insertExercise(overhead_squats)
-		exerciseDao.insertExercise(lunges);
-		exerciseDao.insertExercise(box_squats);
-		exerciseDao.insertExercise(backSquatJumps);
-		exerciseDao.insertExercise(goodMorning);
-		exerciseDao.insertExercise(seatedGoogMorning);
-		exerciseDao.insertExercise(conventionalDeadlift);
-		exerciseDao.insertExercise(sumoDeadlift);
-		exerciseDao.insertExercise(blockPull);
-		exerciseDao.insertExercise(deficitDealift);
-		exerciseDao.insertExercise(snatchGripDeficitDeadlift);
-		exerciseDao.insertExercise(stiffLeggedDeadlift);
-		exerciseDao.insertExercise(clenans);
-		exerciseDao.insertExercise(highPulls);
-		exerciseDao.insertExercise(romanianDeadlift);
-		exerciseDao.insertExercise(flatBarbellBenchPress);
-		exerciseDao.insertExercise(inclineBarbellBenchPress);
-		exerciseDao.insertExercise(dumbbellBenchPress);
-		exerciseDao.insertExercise(inclineDumbbellBenchPress);
-		exerciseDao.insertExercise(declineDumbbellBenchPress);
-		exerciseDao.insertExercise(blockPress);
-		exerciseDao.insertExercise(benchPressWithChains);
-		exerciseDao.insertExercise(floorPress);
-		exerciseDao.insertExercise(closeGripBenchPress);
-		exerciseDao.insertExercise(reverseGripBenchPress);
-		exerciseDao.insertExercise(dips);
-		exerciseDao.insertExercise(dumbbellFlies);
-		exerciseDao.insertExercise(militaryPress);
-		exerciseDao.insertExercise(dumbbellOverheadPress);
-		exerciseDao.insertExercise(pushPress);
-		exerciseDao.insertExercise(jerk);
-		exerciseDao.insertExercise(snatchGripPress);
-		exerciseDao.insertExercise(seatedSnatchGripPress);
-		exerciseDao.insertExercise(snatch);
-		exerciseDao.insertExercise(cleanAndJerk);
-		exerciseDao.insertExercise(pullUps);
-		exerciseDao.insertExercise(chinUps);
-		exerciseDao.insertExercise(wideGripPullUps);
-		exerciseDao.insertExercise(muscleUps);
-		exerciseDao.insertExercise(kettlebellSwing);
-		exerciseDao.insertExercise(kettlebellTurkishGetUp);
-		exerciseDao.insertExercise(kettlebellSnatch);
-		exerciseDao.insertExercise(kettlebellClean);
-		exerciseDao.insertExercise(kettlebellPress);
-		exerciseDao.insertExercise(kettlebellJerk);
-		exerciseDao.insertExercise(kettlebellArmBar);
-		exerciseDao.insertExercise(kettlebellOneArmSwing);
-		exerciseDao.insertExercise(kettlebellBentpress);
-	}
-		.subscribeOn(Schedulers.io())
-		.observeOn(AndroidSchedulers.mainThread())
+
+	exerciseDao.insertExercise(backSquat)
+	exerciseDao.insertExercise(frontSquats)
+	exerciseDao.insertExercise(overhead_squats)
+	exerciseDao.insertExercise(lunges);
+	exerciseDao.insertExercise(box_squats);
+	exerciseDao.insertExercise(backSquatJumps);
+	exerciseDao.insertExercise(goodMorning);
+	exerciseDao.insertExercise(seatedGoogMorning);
+	exerciseDao.insertExercise(conventionalDeadlift);
+	exerciseDao.insertExercise(sumoDeadlift);
+	exerciseDao.insertExercise(blockPull);
+	exerciseDao.insertExercise(deficitDealift);
+	exerciseDao.insertExercise(snatchGripDeficitDeadlift);
+	exerciseDao.insertExercise(stiffLeggedDeadlift);
+	exerciseDao.insertExercise(clenans);
+	exerciseDao.insertExercise(highPulls);
+	exerciseDao.insertExercise(romanianDeadlift);
+	exerciseDao.insertExercise(flatBarbellBenchPress);
+	exerciseDao.insertExercise(inclineBarbellBenchPress);
+	exerciseDao.insertExercise(dumbbellBenchPress);
+	exerciseDao.insertExercise(inclineDumbbellBenchPress);
+	exerciseDao.insertExercise(declineDumbbellBenchPress);
+	exerciseDao.insertExercise(blockPress);
+	exerciseDao.insertExercise(benchPressWithChains);
+	exerciseDao.insertExercise(floorPress);
+	exerciseDao.insertExercise(closeGripBenchPress);
+	exerciseDao.insertExercise(reverseGripBenchPress);
+	exerciseDao.insertExercise(dips);
+	exerciseDao.insertExercise(dumbbellFlies);
+	exerciseDao.insertExercise(militaryPress);
+	exerciseDao.insertExercise(dumbbellOverheadPress);
+	exerciseDao.insertExercise(pushPress);
+	exerciseDao.insertExercise(jerk);
+	exerciseDao.insertExercise(snatchGripPress);
+	exerciseDao.insertExercise(seatedSnatchGripPress);
+	exerciseDao.insertExercise(snatch);
+	exerciseDao.insertExercise(cleanAndJerk);
+	exerciseDao.insertExercise(pullUps);
+	exerciseDao.insertExercise(chinUps);
+	exerciseDao.insertExercise(wideGripPullUps);
+	exerciseDao.insertExercise(muscleUps);
+	exerciseDao.insertExercise(kettlebellSwing);
+	exerciseDao.insertExercise(kettlebellTurkishGetUp);
+	exerciseDao.insertExercise(kettlebellSnatch);
+	exerciseDao.insertExercise(kettlebellClean);
+	exerciseDao.insertExercise(kettlebellPress);
+	exerciseDao.insertExercise(kettlebellJerk);
+	exerciseDao.insertExercise(kettlebellArmBar);
+	exerciseDao.insertExercise(kettlebellOneArmSwing);
+	exerciseDao.insertExercise(kettlebellBentpress);
 }
+
+

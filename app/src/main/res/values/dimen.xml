@@ -3,4 +3,5 @@
 
 	<dimen name="global_spacing_8dp">8dp</dimen>
 	<dimen name="global_spacing_16dp">16dp</dimen>
+
 </resources>

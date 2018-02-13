@@ -1,9 +1,8 @@
-package com.ivet.lift.di.component
+package com.pwl.lift.di.component
 
-import com.ivet.lift.di.module.ActivityModule
-import com.ivet.lift.di.scope.AppScope
-import com.ivet.lift.ui.activity.AddExerciseActivity
-import com.ivet.lift.ui.activity.ExerciseListActivity
+import com.pwl.lift.di.anotation.scope.AppScope
+import com.pwl.lift.di.module.ActivityModule
+import com.pwl.lift.ui.exerciseList.ExerciseListActivity
 import dagger.Subcomponent
 
 @AppScope
@@ -11,8 +10,6 @@ import dagger.Subcomponent
 interface ActivityComponent {
 
 	fun inject(exerciseListActivity: ExerciseListActivity)
-
-	fun inject(addExerciseActivity: AddExerciseActivity)
 
 	@Subcomponent.Builder
 	interface Builder {

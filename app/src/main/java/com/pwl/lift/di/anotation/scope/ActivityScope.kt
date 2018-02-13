@@ -1,4 +1,4 @@
-package com.ivet.lift.di.scope
+package com.pwl.lift.di.anotation.scope
 
 import javax.inject.Scope
 
