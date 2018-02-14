@@ -54,7 +54,7 @@ class ExerciseListActivity : BaseActivity<ExerciseListViewModel>(), ExerciseList
 		binding.let {
 			binding.setLifecycleOwner(this)
 			binding.view = this
-			binding.viewModel = ViewModelProviders.of(this, viewModelFactory).get(ExerciseListViewModel::class.java)
+			binding.viewModel = viewModel
 		}
 	}
 
