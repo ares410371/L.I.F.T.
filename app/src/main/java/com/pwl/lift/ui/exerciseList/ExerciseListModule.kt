@@ -1,17 +1,15 @@
-package com.pwl.lift.di.module
+package com.pwl.lift.ui.exerciseList
 
 import android.arch.lifecycle.ViewModel
 import com.pwl.lift.db.dao.ExerciseDao
 import com.pwl.lift.di.anotation.ViewModelKey
 import com.pwl.lift.di.anotation.scope.ActivityScope
-import com.pwl.lift.di.component.ActivityComponent
-import com.pwl.lift.ui.exerciseList.ExerciseListViewModel
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
 
-@Module(subcomponents = arrayOf(ActivityComponent::class))
-class ViewModelModule {
+@Module
+class ExerciseListModule {
 
 	@Provides
 	@IntoMap

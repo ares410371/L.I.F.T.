@@ -1,16 +1,16 @@
 package com.pwl.lift.di.module
 
+import android.app.Application
 import android.arch.persistence.db.SupportSQLiteDatabase
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
-import android.content.Context
 import com.pwl.lift.common.Background
+import com.pwl.lift.common.initExercises
 import com.pwl.lift.db.TrainingDatabase
 import com.pwl.lift.db.dao.ExerciseDao
 import com.pwl.lift.db.dao.TrainingDayDao
 import com.pwl.lift.db.dao.WeightAndRepsDao
 import com.pwl.lift.di.anotation.scope.AppScope
-import com.pwl.lift.common.initExercises
 import dagger.Module
 import dagger.Provides
 import kotlinx.coroutines.experimental.launch
@@ -20,17 +20,17 @@ import kotlinx.coroutines.experimental.launch
  */
 
 @Module
-class DatabaseModule(val appContext: Context) {
+class DatabaseModule() {
 
 	@Provides
 	@AppScope
-	fun provideTrainingDatabase(): TrainingDatabase {
+	fun provideTrainingDatabase(appContext: Application): TrainingDatabase {
 		val trainingDatabase: TrainingDatabase = Room.databaseBuilder(appContext.applicationContext, TrainingDatabase::class.java, "TrainingDatabase.db")
 			.addCallback(object : RoomDatabase.Callback() {
 				override fun onCreate(db: SupportSQLiteDatabase) {
 					super.onCreate(db)
 					launch(Background) {
-						initExercises(appContext, provideTrainingDatabase().exerciseDao())
+						initExercises(appContext, provideTrainingDatabase(appContext).exerciseDao())
 					}
 				}
 			}).build()

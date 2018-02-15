@@ -31,10 +31,6 @@ class ExerciseListActivity : BaseActivity<ExerciseListViewModel>(), ExerciseList
 	private val toolbarActionMode: ToolbarActionMode = ToolbarActionMode()
 	private var actionMode: ActionMode? = null
 
-	override fun initInjector() {
-		activityComponent.inject(this)
-	}
-
 	override fun initViewModel() {
 		viewModel = ViewModelProviders.of(this, viewModelFactory).get(ExerciseListViewModel::class.java)
 		viewModel.actionModeAction.observe(this, Observer {

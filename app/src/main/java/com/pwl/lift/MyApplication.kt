@@ -1,26 +1,31 @@
 package com.pwl.lift
 
+import android.app.Activity
 import android.app.Application
-import com.pwl.lift.di.component.ApplicationComponent
 import com.pwl.lift.di.component.DaggerApplicationComponent
-import com.pwl.lift.di.module.DatabaseModule
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasActivityInjector
+import javax.inject.Inject
 
 /**
  * Created by ivet on 23/01/2018.
  */
-class MyApplication : Application() {
+class MyApplication : Application(), HasActivityInjector {
 
-	lateinit var applicationComponent: ApplicationComponent
+	@Inject
+	lateinit var activityDispatchingAndroidInjector: DispatchingAndroidInjector<Activity>
+
+	override fun activityInjector(): DispatchingAndroidInjector<Activity> {
+		return activityDispatchingAndroidInjector
+	}
 
 	override fun onCreate() {
 		super.onCreate()
 
-		initApplicationComponent()
-	}
-
-	private fun initApplicationComponent() {
-		applicationComponent = DaggerApplicationComponent.builder()
-			.databaseModule(DatabaseModule(this))
+		DaggerApplicationComponent
+			.builder()
+			.application(this)
 			.build()
+			.inject(this)
 	}
 }
